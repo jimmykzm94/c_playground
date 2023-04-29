@@ -5,3 +5,6 @@ run_linkedList:
 run_dictionary:
 	gcc -o dictionary.o dictionary.c
 	./dictionary.o
+
+clean:
+	rm *.o
