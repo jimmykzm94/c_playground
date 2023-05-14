@@ -6,6 +6,13 @@ char buff[60];
 char *ftoa(float value, int dp)
 {
     int index = 59;
+    char negative = 0;
+
+    if(value < 0)
+    {
+        value *= -1;
+        negative = 1;
+    }
 
     // Get dp
     int temp;
@@ -25,10 +32,20 @@ char *ftoa(float value, int dp)
     buff[index--] = '.';
 
     // Get decimal
+    if(temp == 0)
+    {
+        buff[index--] = '0';
+    }
     while(temp != 0)
     {
         buff[index--] = 0x30 + temp % 10;
         temp /= 10;
+    }
+
+    // Negative
+    if(negative)
+    {
+        buff[index--] = '-';
     }
 
     return &buff[++index];
@@ -37,5 +54,11 @@ char *ftoa(float value, int dp)
 int main(void)
 {
     char *str = ftoa(123.1422, 3);
+    printf("%s\n", str);
+
+    str = ftoa(0.1422, 3);
+    printf("%s\n", str);
+
+    str = ftoa(-123.1422, 3);
     printf("%s\n", str);
 }
