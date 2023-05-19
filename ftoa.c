@@ -3,7 +3,7 @@
 
 // String buffer
 char buff[60];
-char *ftoa(float value, int dp)
+char *ftoa(float value, unsigned int dp)
 {
     int index = 59;
     char negative = 0;
@@ -22,14 +22,17 @@ char *ftoa(float value, int dp)
         multi_10 *= 10;
     }
     temp = value * multi_10;
-    for(int i = 0; i < dp; i++)
+    if(dp != 0)
     {
-        buff[index--] = 0x30 + temp % 10;
-        temp /= 10;
-    }
+        for(int i = 0; i < dp; i++)
+        {
+            buff[index--] = 0x30 + temp % 10;
+            temp /= 10;
+        }
 
-    // Dot
-    buff[index--] = '.';
+        // Dot
+        buff[index--] = '.';
+    }
 
     // Get decimal
     if(temp == 0)
@@ -60,5 +63,8 @@ int main(void)
     printf("%s\n", str);
 
     str = ftoa(-123.1422, 3);
+    printf("%s\n", str);
+
+    str = ftoa(-123, 0);
     printf("%s\n", str);
 }
