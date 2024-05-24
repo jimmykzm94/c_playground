@@ -5,14 +5,19 @@
 #include <unistd.h>
 #include <termios.h>
 
-#define SERIAL_PORT "/dev/cu.usbmodem11201"  // Serial port
+int main(int argc, char *argv[]){
+    // Check argument
+    if(argc < 2)
+    {
+        printf("No serial port found\n");
+        return 1;
+    }
 
-int main(){
     int serial_port;
     char buffer[256];
 
     // Open serial port
-    serial_port = open(SERIAL_PORT, O_RDONLY);
+    serial_port = open(argv[1], O_RDONLY);
     if(serial_port < 0){
         perror("Failed to open serial port");
         return 1;
