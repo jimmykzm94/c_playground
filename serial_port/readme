@@ -1,0 +1,8 @@
+### For Posix, tested using MacOS:
+1. Upload arduino code
+2. In Mac, `gcc -o serial.o serial_posix.c`
+
+### For Windows:
+- Either use GNU GCC or MSVC compiler
+    1. G++, `gcc -o serial.exe serial_window.c`
+    2. MSVC, `cl.exe serial_window.c /Fe:serial.exe`
