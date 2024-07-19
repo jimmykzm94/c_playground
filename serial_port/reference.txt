@@ -1,1 +1,6 @@
+posix:
 https://www.ing.iac.es/~docs/external/serial/serial.pdf
+
+windows:
+https://ds.opdenbrouw.nl/micprg/pdf/serial-win.pdf
+https://learn.microsoft.com/en-us/windows/win32/devio/configuring-a-communications-resource
