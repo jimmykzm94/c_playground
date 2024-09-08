@@ -1,0 +1,2 @@
+Use `make build` to build program.
+Run server first, then open another terminal to run client.
