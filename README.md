@@ -7,3 +7,4 @@
 5. Check power of 2
 6. Class in C (oop)
 7. Serial port (Windows, Posix)
+8. Socket in C
