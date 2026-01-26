@@ -19,5 +19,9 @@ run_oop:
 	./oop.o shopping Alla
 	./oop.o movie Blly
 
+run_custom_printf:
+	gcc -o custom_printf.o custom_printf.c
+	./custom_printf.o
+
 clean:
 	rm -f *.o *.out
