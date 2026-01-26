@@ -8,3 +8,4 @@
 6. Class in C (oop)
 7. Serial port (Windows, Posix)
 8. Socket in C
+9. Custom printf
